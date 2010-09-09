@@ -15,17 +15,17 @@ With this plugin, you will be able to use the Yahoo API terms to get suggested t
 
 It currently works with `English, German, French, Spanish and Portuguese` content. 
 
-Plugin site http://development.mowster.net
+Plugin site <a href="http://development.mowster.net">http://development.mowster.net</a>
 
-**Other Credits**
-http://jobs.mowster.net
+**Others Credits**
+<a href="http://jobs.mowster.net">http://jobs.mowster.net</a>
 
 == Installation ==
 
 1. Download the mowster-Tags.zip file to your computer.
-1. Unzip the file 
-1. Upload `mowster-Tags` folder to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Unzip the file.
+1. Upload `mowster-Tags` folder to the `/wp-content/plugins/` directory.
+1. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Frequently Asked Questions ==
 
