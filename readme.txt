@@ -1,5 +1,5 @@
 === mowsterTags ===
-Contributors: http://development.mowster.net
+Contributors: PedroDM
 Tags: tag, tags, tagging, post, suggest, related, automatic 
 Requires at least: 3.0
 Tested up to: 3.0
