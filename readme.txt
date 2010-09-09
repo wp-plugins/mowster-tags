@@ -5,7 +5,7 @@ Requires at least: 3.0
 Tested up to: 3.0
 Stable tag: 1.0
 
-Wordpress plugin for tag suggestions using Yahoo API
+Wordpress plugin for tag suggestions using Yahoo API.
 
 == Description ==
 
