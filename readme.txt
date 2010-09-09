@@ -1,6 +1,6 @@
 === mowsterTags ===
 Contributors: http://development.mowster.net
-Tags: tag,tags,tagging,post,suggest,related,automatic 
+Tags: tag, tags, tagging, post, suggest, related, automatic 
 Requires at least: 3.0
 Tested up to: 3.0
 Stable tag: 1.0
