@@ -40,7 +40,7 @@ Currently English, German, French, Spanish and Portuguese.
 == Changelog ==  
 
 = 1.13 =
-* bug fixed Fetch tags button
+* bug fixed jQuery Fetch button
 
 = 1.12 =
 * jQuery code optimized
