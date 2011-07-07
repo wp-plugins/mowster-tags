@@ -3,7 +3,7 @@ Contributors: PedroDM
 Tags: tag, tags, tagging, post, suggest, related, automatic 
 Requires at least: 3.0
 Tested up to: 3.2
-Stable tag: 1.13
+Stable tag: 1.12
 
 Wordpress plugin for tag suggestions using Yahoo API
 
@@ -38,9 +38,6 @@ Currently English, German, French, Spanish and Portuguese.
 1. Button to `Fetch tags`.
 
 == Changelog ==  
-
-= 1.13 =
-* bug fixed Fetch tags button
 
 = 1.12 =
 * jQuery code optimized

@@ -63,7 +63,7 @@ jQuery(document).ready(function($) {
 						}
 					},
 					complete: function(request, textStatus) {
-					jQuery("#mowsterTags").val(mowsterVars.mowsterTags_fetchTags); 
+					jQuery("#mowsterTags").val(mowsterTags_fetchTags); 
 					}
 				});	
 			}
