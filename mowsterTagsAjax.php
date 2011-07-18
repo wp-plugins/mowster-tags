@@ -1,6 +1,6 @@
 <?php
 
-function join_post_tags(){
+function join_post_mowsterTags(){(){
 
 	// Save count option
 	$title = strip_tags(stripslashes($_POST['title']));
