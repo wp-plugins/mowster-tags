@@ -4,7 +4,7 @@ Plugin Name: mowsterTags
 Plugin URI: http://development.mowster.net
 Description: Wordpress plugin for tag suggestions using Yahoo! Term Extraction API
 Author: PedroDM
-Version: 1.15
+Version: 1.16
 License: GPL
 Author URI: http://jobs.mowster.net
 */
