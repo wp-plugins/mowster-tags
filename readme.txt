@@ -63,4 +63,5 @@ Currently English, German, French, Spanish and Portuguese.
 * Added localization (English, Portuguese)
 * Tested with Internet Explorer, Firefox, Safari and Opera
 
+
 == Upgrade Notice ==
