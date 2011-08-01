@@ -61,7 +61,7 @@ function join_post_mowsterTags(){
 	
 }
 
-// fix: PHP version that does not support anonymous functions
+// fix: PHP versions not supporting anonymous functions
 function mowsterTags_callback($x) { 
 	return (strlen($x) > 2); 
 }

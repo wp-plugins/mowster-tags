@@ -4,18 +4,17 @@ Plugin Name: mowsterTags
 Plugin URI: http://development.mowster.net
 Description: Wordpress plugin for tag suggestions using Yahoo! Term Extraction API
 Author: PedroDM
-Version: 1.17
+Version: 1.18
 License: GPL
 Author URI: http://jobs.mowster.net
 */
 
-
-$plugin_url_path = WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__));
-$pathinfo = pathinfo($_SERVER['REQUEST_URI']);
+$mowsterTags_plugin_version = '1.18';
+$mowsterTags_plugin_url_path = WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__));
 
 
 function mowsterTags_scripts(){
-	global $plugin_url_path, $pathinfo, $post;
+	global $mowsterTags_plugin_url_path, $mowsterTags_plugin_version, $post;
 	
 	if ($post->post_type == 'post') {
 			
@@ -25,7 +24,7 @@ function mowsterTags_scripts(){
 			$count = 20; update_option('mowsterTags_count', $count);
 		}
 	   
-		wp_enqueue_script('mowsterTags', $plugin_url_path . 'tags.js' , false, '1.1', false);
+		wp_enqueue_script('mowsterTags', $mowsterTags_plugin_url_path . 'tags.js' , false, $mowsterTags_plugin_version, false);
 		$mowstervars = array(
 			'mowsterTags_countTags' => $count,
 			'mowsterTags_html_add_to' => '.tagsdiv .ajaxtag',
@@ -47,8 +46,8 @@ add_action('admin_print_scripts-post-new.php', 'mowsterTags_scripts');
 
 
 function mowsterTags_styles(){
-	global $plugin_url_path, $post;
-	if ($post->post_type == 'post') wp_enqueue_style('mowsterTags', $plugin_url_path . 'style.css', '', '1.14');
+	global $mowsterTags_plugin_url_path, $mowsterTags_plugin_version, $post;
+	if ($post->post_type == 'post') wp_enqueue_style('mowsterTags', $mowsterTags_plugin_url_path . 'style.css', '', $mowsterTags_plugin_version);
 }
 add_action('admin_print_styles-post.php', 'mowsterTags_styles');
 add_action('admin_print_styles-post-new.php', 'mowsterTags_styles');
