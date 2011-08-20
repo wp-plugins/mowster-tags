@@ -3,7 +3,7 @@ Contributors: PedroDM
 Tags: tag, tags, tagging, post, suggest, related, automatic 
 Requires at least: 3.0
 Tested up to: 3.2.1
-Stable tag: 1.18
+Stable tag: 1.20
 
 Wordpress plugin for tag suggestions using Yahoo API
 
@@ -13,7 +13,7 @@ With this plugin, you will be able to use the Yahoo API terms to get suggested t
 
 * Just click on `Fetch tags`. Title, content and optional excerpt of your post will be analyzed by Yahoo in order to find words that could be useful as tags. 
 
-It currently works with `English, German, French, Spanish and Portuguese` content. 
+It currently works with `all languages supported by Yahoo! Term Extraction`. 
 
 Plugin site <a href="http://development.mowster.net">http://development.mowster.net</a>
 
@@ -31,13 +31,17 @@ Plugin site <a href="http://development.mowster.net">http://development.mowster.
 
 = Which languages are supported? =
 
-Currently English, German, French, Spanish and Portuguese. 
+All supported by Yahoo! Term Extraction
 
 == Screenshots ==
 
 1. Button to `Fetch tags`.
 
 == Changelog ==  
+
+= 1.20 =
+* Security improved
+* Spanish and Portuguese translation added
 
 = 1.18 =
 * minor improvals to avoid conflicts with others plugins

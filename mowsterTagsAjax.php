@@ -1,5 +1,11 @@
 <?php
 
+if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
+	$location = 'http://'.substr($_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"], 0, strrpos($_SERVER["SERVER_NAME"].'/'.$_SERVER["REQUEST_URI"], '/wp-content/'));
+	header('Location: '.$location);
+	die();
+}
+
 function join_post_mowsterTags(){
 
 	// Save count option
