@@ -1,5 +1,5 @@
 # Copyright (C) 2010 PedroDM
-# This file is distributed under the same license as the Broken Link Checker package.
+# This file is distributed under the same license as the mowsterTags package.
 # Autor: PedroDM - <pm[at]mowster[dot]net>
 # Website: http://jobs.mowster.net/ - <jobs@mowster.net>
 #
