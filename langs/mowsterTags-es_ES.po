@@ -1,8 +1,3 @@
-# Copyright (C) 2010 PedroDM
-# This file is distributed under the same license as the mowsterTags package.
-# Autor: PedroDM - <pm[at]mowster[dot]net>
-# Website: http://jobs.mowster.net/ - <jobs@mowster.net>
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: mowsterTags 1.20\n"
@@ -14,32 +9,37 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-Language: Spanish\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: mowsterTags.php:32
+#@ mowsterTags
+#: mowsterTags.php:28
 msgid "Fetch tags"
 msgstr "Buscar Tags"
 
-#: mowsterTags.php:33
+#@ mowsterTags
+#: mowsterTags.php:29
 msgid "Fetching tags..."
 msgstr "Buscando..."
 
+#@ mowsterTags
 #: mowsterTags.php:34
-#: mowsterTags.php:39
 msgid "mowsterTags: Yahoo server seems to be down at the moment. Please try again later."
 msgstr "mowsterTags: El servidor de Yahoo parece estar offline. Por favor, inténtelo más tarde."
 
+#@ mowsterTags
 #: mowsterTags.php:35
-#: mowsterTags.php:40
 msgid "mowsterTags: An error occurred. Please inform the creator of this plugin."
 msgstr "mowsterTags: Se produjo un error. Por favor informe el administrador de este plugin."
 
-#: mowsterTags.php:38
+#@ mowsterTags
+#: mowsterTags.php:33
 msgid "mowsterTags: Insufficient content text length."
 msgstr "mowsterTags: contenido del texto insuficiente para sugerir tags."
 
