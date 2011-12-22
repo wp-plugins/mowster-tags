@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: mowsterTags 1.20\n"
+"Project-Id-Version: mowsterTags 1.21\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-23 19:49-0000\n"
+"POT-Creation-Date: 2011-12-22 14:46-0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: mwJobs | http://jobs.mowster.net <jobs@mowster.net>\n"
@@ -19,27 +19,27 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 
 # @ mowsterTags
-#: ../mowsterTags.php:28
+#: ../index.php:34
 msgid "Fetch tags"
 msgstr "Buscar Tags"
 
 # @ mowsterTags
-#: ../mowsterTags.php:29
+#: ../index.php:35
 msgid "Fetching tags..."
 msgstr "Buscando..."
 
 # @ mowsterTags
-#: ../mowsterTags.php:33
+#: ../index.php:39
 msgid "mowsterTags: Insufficient content text length."
 msgstr "mowsterTags: contenido del texto insuficiente para sugerir tags."
 
 # @ mowsterTags
-#: ../mowsterTags.php:34
+#: ../index.php:40
 msgid "mowsterTags: Yahoo server seems to be down at the moment. Please try again later."
 msgstr "mowsterTags: El servidor de Yahoo parece estar offline. Por favor, inténtelo más tarde."
 
 # @ mowsterTags
-#: ../mowsterTags.php:35
+#: ../index.php:41
 msgid "mowsterTags: An error occurred. Please inform the creator of this plugin."
 msgstr "mowsterTags: Se produjo un error. Por favor informe el administrador de este plugin."
 

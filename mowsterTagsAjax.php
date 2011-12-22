@@ -32,8 +32,9 @@ function join_post_mowsterTags(){
 	if (!empty($tags)) {
 		$param .= '&query='.urlencode($tags); // Existing tags
 	}
-	$param .= '&output=json'; // Get PHP Array !
+	$param .= '&output=json'; 
 			
+	// Get PHP Array
 	$data = array();
 	$reponse = wp_remote_post('http://search.yahooapis.com/ContentAnalysisService/V1/termExtraction', array('body' =>$param) );
 	if( !is_wp_error($reponse) && $reponse != null ) {

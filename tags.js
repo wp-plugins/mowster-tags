@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
 			} else mowsterTags_select_options = mowsterTags_select_options + '<option value="' + myArray[i] + '">' + myArray[i] + '</option>'; 
 		}
          
-        jQuery(mowsterVars.mowsterTags_html_add_to).prepend("<div style=\"margin-bottom: 5px;\"><select name=\"mowsterTags_count\" id=\"mowsterTags_count\">" + mowsterTags_select_options + "</select> <input type=\"button\" class=\"button\" value=\"" + mowsterVars.mowsterTags_fetchTags + "\" id=\"mowsterTags\" style=\"vertical-align: middle;\" /> " +
+        jQuery(mowsterVars.mowsterTags_html_add_to).prepend("<div style=\"margin-bottom: 5px;\"><input type=\"button\" class=\"button\" value=\"" + mowsterVars.mowsterTags_fetchTags + "\" id=\"mowsterTags\" style=\"vertical-align: middle;\" /> <select name=\"mowsterTags_count\" id=\"mowsterTags_count\">" + mowsterTags_select_options + "</select>  " +
         " <a id=\"mowster_jobs_link\" href=\"http://jobs.mowster.net/\" target=\"_blank\"><img src=\"" + mowsterVars.mowsterTags_logo_path + "\" alt=\"jobs.mowster.net\" id=\"mowster_jobs_link_image\" title=\"jobs.mowster.net\" style=\"vertical-align: middle; margin-left: 3px;\" /></a>" +
 		"<img id=\"mowster_tags_ajax\" src=\"" + mowsterVars.mowsterTags_loader_path + "\" style=\"vertical-align: middle; margin-left: 3px;\" /></div></div>");
 
@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
 					jQuery("#mowsterTags").val(mowsterVars.mowsterTags_fetchTags);
 					return true;
 				}
-			
+				
 				jQuery(this).val(mowsterVars.mowsterTags_fetchingTags);
 				jQuery("#mowster_jobs_link").hide();
 				jQuery("#mowster_tags_ajax").show();
