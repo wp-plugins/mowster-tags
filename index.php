@@ -4,7 +4,7 @@
 	Plugin URI: http://development.mowster.net
 	Description: Wordpress plugin for tag suggestions using Yahoo! Term Extraction API
 	Author: PedroDM
-	Version: 1.21
+	Version: 1.22
 	License: GPL
 	Author URI: http://jobs.mowster.net
 */
@@ -15,8 +15,9 @@ if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
 	die();
 }
 
-define('MOWSTERTAGS_VERSION', 		'1.21');
+define('MOWSTERTAGS_VERSION', 		'1.22');
 define('MOWSTERTAGS_URL_PATH', 		WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)));
+define('MOWSTERTAGS_PATH',			basename(rtrim(dirname(__FILE__), '/')));
 
 
 function mowsterTags_scripts(){
@@ -26,15 +27,15 @@ function mowsterTags_scripts(){
 			
 		$count = get_option('mowsterTags_count');
 	   
-		wp_enqueue_script('mowsterTags', MOWSTERTAGS_URL_PATH . 'tags.js' , false, MOWSTERTAGS_VERSION, false);
+		wp_enqueue_script('mowsterTags', MOWSTERTAGS_URL_PATH . 'js/tags.js' , false, MOWSTERTAGS_VERSION, false);
 		$mowstervars = array(
 			'mowsterTags_countTags' => $count,
 			'mowsterTags_html_add_to' => '.tagsdiv .ajaxtag',
 			'mowsterTags_newtags' => '#new-tag-post_tag',
 			'mowsterTags_fetchTags' => __("Fetch tags", "mowsterTags"),
 			'mowsterTags_fetchingTags' => __("Fetching tags...", "mowsterTags"),
-			'mowsterTags_logo_path' => get_option('siteurl') . '/wp-content/plugins/mowster-tags/mowsterTags_logo.gif',
-			'mowsterTags_loader_path' => get_option('siteurl') . '/wp-content/plugins/mowster-tags/mowsterTags_loader.gif',
+			'mowsterTags_logo_path' => MOWSTERTAGS_URL_PATH . 'images/mowsterTags_logo.gif',
+			'mowsterTags_loader_path' => MOWSTERTAGS_URL_PATH . 'images/mowsterTags_loader.gif',
 			'mowsterTags_ajax_path' => get_option('siteurl') . '/wp-admin/admin-ajax.php',
 			'mowsterTags_insuficient_text' =>  __("mowsterTags: Insufficient content text length.", "mowsterTags"),
 			'mowsterTags_server_error' => __("mowsterTags: Yahoo server seems to be down at the moment. Please try again later.", "mowsterTags"),
@@ -50,14 +51,14 @@ add_action('admin_print_scripts-post-new.php', 'mowsterTags_scripts');
 
 function mowsterTags_styles(){
 	global $post;
-	if ($post->post_type == 'post') wp_enqueue_style('mowsterTags', MOWSTERTAGS_URL_PATH . 'style.css', '', MOWSTERTAGS_VERSION);
+	if ($post->post_type == 'post') wp_enqueue_style('mowsterTags', MOWSTERTAGS_URL_PATH . 'css/style.css', '', MOWSTERTAGS_VERSION);
 }
 add_action('admin_print_styles-post.php', 'mowsterTags_styles');
 add_action('admin_print_styles-post-new.php', 'mowsterTags_styles');
 
 
 function mowsterTags_admin_init(){
-	load_plugin_textdomain('mowsterTags', false, basename(rtrim(dirname(__FILE__), '/')) . '/langs');
+	load_plugin_textdomain('mowsterTags', false, MOWSTERTAGS_PATH . '/langs');
 	
 	require_once(dirname(__FILE__).'/mowsterTagsAjax.php');
 }
