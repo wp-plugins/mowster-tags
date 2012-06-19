@@ -1,11 +1,11 @@
 <?php
 /*
 	Plugin Name: mowsterTags
-	Plugin URI: http://development.mowster.net
+	Plugin URI: http://wordpress.mowster.net
 	Description: Wordpress plugin for tag suggestions using Yahoo! Term Extraction API
-	Author: PedroDM
-	Version: 1.22
-	License: GPL
+	Author: mowster
+	Version: 1.30
+	License: GPLv2 or later
 	Author URI: http://jobs.mowster.net
 */
 
@@ -15,9 +15,10 @@ if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
 	die();
 }
 
-define('MOWSTERTAGS_VERSION', 		'1.22');
+define('MOWSTERTAGS_VERSION', 		'1.30');
 define('MOWSTERTAGS_URL_PATH', 		WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)));
 define('MOWSTERTAGS_PATH',			basename(rtrim(dirname(__FILE__), '/')));
+define('MOWSTERTAGS_CHARSET',		get_bloginfo('charset'));
 
 
 function mowsterTags_scripts(){
@@ -37,9 +38,9 @@ function mowsterTags_scripts(){
 			'mowsterTags_logo_path' => MOWSTERTAGS_URL_PATH . 'images/mowsterTags_logo.gif',
 			'mowsterTags_loader_path' => MOWSTERTAGS_URL_PATH . 'images/mowsterTags_loader.gif',
 			'mowsterTags_ajax_path' => get_option('siteurl') . '/wp-admin/admin-ajax.php',
-			'mowsterTags_insuficient_text' =>  __("mowsterTags: Insufficient content text length.", "mowsterTags"),
-			'mowsterTags_server_error' => __("mowsterTags: Yahoo server seems to be down at the moment. Please try again later.", "mowsterTags"),
-			'mowsterTags_misc_error' => __("mowsterTags: An error occurred. Please inform the creator of this plugin.", "mowsterTags")
+			'mowsterTags_insuficient_text' =>  __("Insufficient content text length.", "mowsterTags"),
+			'mowsterTags_server_error' => __("Yahoo server seems to be down at the moment. Please try again later.", "mowsterTags"),
+			'mowsterTags_misc_error' => __("An error occurred. Please inform the creator of this plugin.", "mowsterTags")
 		);
 		wp_localize_script('mowsterTags', 'mowsterVars', $mowstervars);	
 	

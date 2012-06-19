@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
 		jQuery("#mowster_tags_ajax").hide();
 		
 		
-		jQuery("#mowsterTags").click(function(e) {
+		jQuery("#mowsterTags").click(function(e){
 		
 			var content = (typeof tinyMCE == "undefined" || 
                               typeof tinyMCE.getInstanceById("content") == "undefined" ||
@@ -26,21 +26,21 @@ jQuery(document).ready(function($) {
                               tinyMCE.getInstanceById("content").getContent();
 							  
 			var text = jQuery("#title").val() + " " + 
-                          (typeof content === 'string' ? jQuery(content).text() : "") + " " +
-                          jQuery("#excerpt").val();
+                    (typeof content === 'string' ? jQuery(content).text() : "") + " " +
+                    jQuery("#excerpt").val();
 			
 			var tags = jQuery(mowsterVars.mowsterTags_newtags).val();
-		
+			
+			
+			if (content.length < 20) {
+					alert(mowsterVars.mowsterTags_insuficient_text);
+					jQuery("#mowsterTags").val(mowsterVars.mowsterTags_fetchTags);
+					return;
+			}			
 			
 			
 			if (typeof text === 'string') {
-			
-				if (text.length < 20) {
-					alert(mowsterVars.mowsterTags_insuficient_text);
-					jQuery("#mowsterTags").val(mowsterVars.mowsterTags_fetchTags);
-					return true;
-				}
-				
+							
 				jQuery(this).val(mowsterVars.mowsterTags_fetchingTags);
 				jQuery("#mowster_jobs_link").hide();
 				jQuery("#mowster_tags_ajax").show();

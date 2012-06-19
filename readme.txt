@@ -1,11 +1,13 @@
 === mowsterTags ===
-Contributors: PedroDM
-Tags: tag, tags, tagging, post, suggest, related, automatic 
+Contributors: mowster
+Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
-Tested up to: 3.3
-Stable tag: 1.22
+Tested up to: 3.4
+Stable tag: 1.30
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Wordpress plugin for tag suggestions using Yahoo API
+Wordpress plugin for tag suggestions using Yahoo API.
 
 == Description ==
 
@@ -15,17 +17,18 @@ With this plugin, you will be able to use the Yahoo API terms to get suggested t
 
 It currently works with `all languages supported by Yahoo! Term Extraction`. 
 
-Plugin site <a href="http://development.mowster.net">http://development.mowster.net</a>
+<strong>Official Site</strong> <a href="http://wordpress.mowster.net">wordpress.mowster.net</a>
 
-**Others Credits**
-<a href="http://jobs.mowster.net">http://jobs.mowster.net</a>
+<strong>Support</strong> [forum](http://wordpress.org/support/plugin/mowster-tags "Support")
+
+Credits <a href="http://jobs.mowster.net">jobs.mowster.net</a>
 
 == Installation ==
 
 1. Download the mowster-Tags.zip file to your computer.
-1. Unzip the file.
-1. Upload `mowster-Tags` folder to the `/wp-content/plugins/` directory.
-1. Activate the plugin through the 'Plugins' menu in WordPress.
+2. Unzip the file.
+3. Upload `mowster-tags` folder to the `/wp-content/plugins/` directory.
+4. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Frequently Asked Questions ==
 
@@ -39,6 +42,12 @@ All supported by Yahoo! Term Extraction
 
 == Changelog ==  
 
+= 1.30 =
+* Charset implementation for non english languages
+* Faster tags fetch process through Yahoo API
+* bug fixed with non lowercases tags added manually
+* Spanish and Portuguese translations updated
+
 = 1.22 =
 * URL optimization
 * Folders organization
@@ -47,8 +56,8 @@ All supported by Yahoo! Term Extraction
 * Security improvement
 
 = 1.20 =
-* Security improved
-* Spanish and Portuguese translation added
+* Security improvement
+* Spanish and Portuguese translations added
 
 = 1.18 =
 * minor improvals to avoid conflicts with others plugins
@@ -85,3 +94,6 @@ All supported by Yahoo! Term Extraction
 
 
 == Upgrade Notice ==
+
+= 1.30 =
+Stable version for WordPress 3.4

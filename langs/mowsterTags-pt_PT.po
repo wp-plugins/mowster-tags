@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: mowsterTags 1.21\n"
+"Project-Id-Version: mowsterTags v1.30\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-23 19:47-0000\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2012-06-19 18:34-0000\n"
+"PO-Revision-Date: 2012-06-19 17:39:55+0000\n"
 "Last-Translator: \n"
-"Language-Team: mwJobs | http://jobs.mowster.net <jobs@mowster.net>\n"
+"Language-Team: wordpress.mowster.net <wordpress@mowster.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,33 +13,34 @@ msgstr ""
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: PORTUGAL\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
 "X-Poedit-Basepath: .\n"
-"X-Textdomain-Support: yes\n"
+"X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: ..\n"
+"X-Textdomain-Support: yes"
 
-# @ mowsterTags
-#: ../mowsterTags.php:28
+#: index.php:36
+#@ mowsterTags
 msgid "Fetch tags"
 msgstr "Procurar Tags"
 
-# @ mowsterTags
-#: ../mowsterTags.php:29
+#: index.php:37
+#@ mowsterTags
 msgid "Fetching tags..."
 msgstr "Procurando..."
 
-# @ mowsterTags
-#: ../mowsterTags.php:33
-msgid "mowsterTags: Insufficient content text length."
-msgstr "mowsterTags: Texto insuficiente para sugerir etiquetas"
+#: index.php:41
+#@ mowsterTags
+msgid "Insufficient content text length."
+msgstr "Texto insuficiente para sugerir etiquetas"
 
-# @ mowsterTags
-#: ../mowsterTags.php:34
-msgid "mowsterTags: Yahoo server seems to be down at the moment. Please try again later."
-msgstr "mowsterTags: O servidor Yahoo encontra-se offline. Por favor, tente mais tarde."
+#: index.php:42
+#@ mowsterTags
+msgid "Yahoo server seems to be down at the moment. Please try again later."
+msgstr "O servidor Yahoo encontra-se offline. Por favor, tente mais tarde."
 
-# @ mowsterTags
-#: ../mowsterTags.php:35
-msgid "mowsterTags: An error occurred. Please inform the creator of this plugin."
-msgstr "mowsterTags: Ocorreu um erro. Por favor, reporte o erro ao criador do plugin."
+#: index.php:43
+#@ mowsterTags
+msgid "An error occurred. Please inform the creator of this plugin."
+msgstr "Ocorreu um erro. Por favor, reporte o erro ao criador do plugin."
 
