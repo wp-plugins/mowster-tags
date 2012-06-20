@@ -20,7 +20,7 @@ It currently works with `all languages supported by Yahoo! Term Extraction`.
 
 <strong>Plugin Site</strong> <a href="http://wordpress.mowster.net">wordpress.mowster.net</a> | <strong>Credits</strong> <a href="http://jobs.mowster.net">jobs.mowster.net</a>
 
-If you need any suggestion or need assistance regarding this plugin, post your question in the support [forum](http://wordpress.org/support/plugin/mowster-tags "Support")
+If you have any suggestion or need assistance regarding this plugin, post your query in the support [forum](http://wordpress.org/support/plugin/mowster-tags "Support")
 
 
 == Installation ==
