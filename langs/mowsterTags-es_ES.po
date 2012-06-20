@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: mowsterTags v1.30\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-19 18:33-0000\n"
-"PO-Revision-Date: 2012-06-19 17:38:37+0000\n"
+"PO-Revision-Date: 2012-06-20 20:43:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: wordpress.mowster.net <wordpress@mowster.net>\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Buscando..."
 #: index.php:41
 #@ mowsterTags
 msgid "Insufficient content text length."
-msgstr "contenido del texto insuficiente para sugerir tags."
+msgstr "Contenido del texto insuficiente para sugerir tags."
 
 #: index.php:42
 #@ mowsterTags
