@@ -4,7 +4,7 @@
 	Plugin URI: http://wordpress.mowster.net
 	Description: Wordpress plugin for tag suggestions using Yahoo! Term Extraction API
 	Author: mowster
-	Version: 1.30
+	Version: 1.31
 	License: GPLv2 or later
 	Author URI: http://jobs.mowster.net
 */
@@ -15,7 +15,7 @@ if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
 	die();
 }
 
-define('MOWSTERTAGS_VERSION', 		'1.30');
+define('MOWSTERTAGS_VERSION', 		'1.31');
 define('MOWSTERTAGS_URL_PATH', 		WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)));
 define('MOWSTERTAGS_PATH',			basename(rtrim(dirname(__FILE__), '/')));
 define('MOWSTERTAGS_CHARSET',		get_bloginfo('charset'));
@@ -24,11 +24,13 @@ define('MOWSTERTAGS_CHARSET',		get_bloginfo('charset'));
 function mowsterTags_scripts(){
 	global $post;
 	
+	wp_enqueue_script('jquery');
+	
 	if ($post->post_type == 'post') {
 			
 		$count = get_option('mowsterTags_count');
 	   
-		wp_enqueue_script('mowsterTags', MOWSTERTAGS_URL_PATH . 'js/tags.js' , false, MOWSTERTAGS_VERSION, false);
+		wp_enqueue_script('mowsterTags', MOWSTERTAGS_URL_PATH . 'js/tags.js' , array('jquery'), MOWSTERTAGS_VERSION, false);
 		$mowstervars = array(
 			'mowsterTags_countTags' => $count,
 			'mowsterTags_html_add_to' => '.tagsdiv .ajaxtag',
