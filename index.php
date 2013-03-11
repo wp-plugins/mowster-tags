@@ -8,7 +8,7 @@
 	Author URI: http://jobs.mowster.net
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.40
+	Version: 1.40.1
 */
 
 if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {

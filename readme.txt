@@ -3,7 +3,7 @@ Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.40
+Stable tag: 1.40.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,11 +53,13 @@ All supported by Yahoo! Term Extraction
 
 == Changelog ==  
 
-= 1.40 =
+= 1.40.1 =
 * Optimized routines for plug-in activation, deactivation and uninstall
 * Options kept in serialized format
 * Ajax and wp_enqueue_script improved
 * New version upgrade check, admin_notices notifications
+* Tested with Firefox, Chrome, Internet Explorer, Safari and Opera
+* bug fixed: upgrade notification
 
 = 1.31 = 
 * WordPress wp_enqueue_script optimized for scripts depending from jQuery
@@ -65,7 +67,7 @@ All supported by Yahoo! Term Extraction
 = 1.30 =
 * Charset implementation for non english languages
 * Faster tags fetch process through Yahoo API
-* bug fixed with non lowercases tags added manually
+* bug fixed: non lowercases tags added manually
 * Spanish and Portuguese translations updated
 
 = 1.22 =
@@ -73,35 +75,35 @@ All supported by Yahoo! Term Extraction
 * Folders organization
 
 = 1.21 =
-* Security improvement
+* Security tweak
 
 = 1.20 =
 * Security improvement
 * Spanish and Portuguese translations added
 
 = 1.18 =
-* minor improvals to avoid conflicts with others plugins
+* small improvements to avoid conflicts with others plugins
 
 = 1.17 =
-* Security fix
+* Security optimized
 
 = 1.16 =
-* bug fixed in callback function
+* bug fixed: callback function
 
 = 1.15 =
-* minor improval, hooks only loaded in new-page script
+* Hooks only loaded in new-page script
 
 = 1.14 =
 * Hooks improved, performance optimized
 
 = 1.13 =
-* bug fixed jQuery Fetch button
+* bug fixed: jQuery Fetch button
 
 = 1.12 =
 * jQuery code optimized
 
 = 1.11 =
-* bug fixed for PHP versions (< 5.3.0) that does not support anonymous functions
+* bug fixed: PHP versions (< 5.3.0) that does not support anonymous functions
 
 = 1.1 =
 * Drop-down limit fixed
@@ -115,5 +117,5 @@ All supported by Yahoo! Term Extraction
 
 == Upgrade Notice ==
 
-= 1.40 =
+= 1.40.1 =
 Plug-in structure redesign, optimized routines. Upgrade notifications to administrators if a new version is available.

@@ -13,7 +13,6 @@ function mwtags_pre_set_site_transient_update_plugins($transient) {
 	global $mwtags_st;
 	if (!is_object($mwtags_st)) $mwtags_st = mwtags_rt_settings();
 	
-	$mwtags_st->settings['domain'] = 'localhost';
 	// check if API is about this plugin	
 	if (empty($transient->checked) || $mwtags_st->settings['domain'] === null) return $transient;  
   
