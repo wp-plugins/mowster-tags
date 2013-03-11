@@ -8,7 +8,7 @@
 	Author URI: http://jobs.mowster.net
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.40.1
+	Version: 1.40.2
 */
 
 if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
@@ -17,7 +17,7 @@ if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
 	die();
 }
 
-define('MWTAGS_VERSION', 		'1.40.1');
+define('MWTAGS_VERSION', 		'1.40.2');
 define('MWTAGS_PLUGIN_NAME',	'tags.mowster');
 define('MWTAGS_URL_PATH', 		WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)));
 define('MWTAGS_PLUGIN_PATH',	realpath(dirname(__FILE__)));
@@ -158,7 +158,7 @@ function mwtags_options($action){
 function mwtags_admin_init(){
 
 	/* textdomain */
-	load_plugin_textdomain('mwtags', false, MWTAGS_PLUGIN_PATH . '/langs');
+	load_plugin_textdomain('mwtags', false, basename(rtrim(dirname(__FILE__), '/')) . '/langs');
 		
 	/* required files */
 	require_once(MWTAGS_PLUGIN_PATH . '/functions.php');

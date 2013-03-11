@@ -3,7 +3,7 @@ Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.40.1
+Stable tag: 1.40.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,13 +53,13 @@ All supported by Yahoo! Term Extraction
 
 == Changelog ==  
 
-= 1.40.1 =
+= 1.40.2 =
 * Optimized routines for plug-in activation, deactivation and uninstall
 * Options kept in serialized format
 * Ajax and wp_enqueue_script improved
 * New version upgrade check, admin_notices notifications
 * Tested with Firefox, Chrome, Internet Explorer, Safari and Opera
-* bug fixed: upgrade notification
+* bug fixed: upgrade notification, translation
 
 = 1.31 = 
 * WordPress wp_enqueue_script optimized for scripts depending from jQuery
@@ -103,7 +103,7 @@ All supported by Yahoo! Term Extraction
 * jQuery code optimized
 
 = 1.11 =
-* bug fixed: PHP versions (< 5.3.0) that does not support anonymous functions
+* bug fixed: PHP versions [upto 5.3.0] that does not support anonymous functions
 
 = 1.1 =
 * Drop-down limit fixed
@@ -117,5 +117,5 @@ All supported by Yahoo! Term Extraction
 
 == Upgrade Notice ==
 
-= 1.40.1 =
+= 1.40.2 =
 Plug-in structure redesign, optimized routines. Upgrade notifications to administrators if a new version is available.
