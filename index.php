@@ -17,7 +17,7 @@ if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
 	die();
 }
 
-define('MWTAGS_VERSION', 		'1.40');
+define('MWTAGS_VERSION', 		'1.40.1');
 define('MWTAGS_PLUGIN_NAME',	'tags.mowster');
 define('MWTAGS_URL_PATH', 		WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)));
 define('MWTAGS_PLUGIN_PATH',	realpath(dirname(__FILE__)));
