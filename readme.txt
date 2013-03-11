@@ -1,9 +1,9 @@
-=== mowsterTags ===
+=== tags.mowster ===
 Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
 Tested up to: 3.4
-Stable tag: 1.31
+Stable tag: 1.40
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,10 +17,21 @@ With this plugin, you will be able to use the Yahoo API terms to get suggested t
 
 It currently works with `all languages supported by Yahoo! Term Extraction`. 
 
+= New in version 1.40 =
+* Optimized routines for plug-in activation, deactivation and uninstall
+* Options kept in serialized format
+* Ajax and wp_enqueue_script improved
+* New version upgrade check, admin_notices notifications
+
+= Translations =
+* Portuguese pt-PT
+* Spanish es-ES
+
+= Support =
+* If you have any suggestion or need assistance regarding this plugin, post your query in the support
+* [Forum](http://wordpress.org/support/plugin/mowster-tags "Support")
 
 <strong>Plugin Site</strong> <a href="http://wordpress.mowster.net">wordpress.mowster.net</a> | <strong>Credits</strong> <a href="http://jobs.mowster.net">jobs.mowster.net</a>
-
-If you have any suggestion or need assistance regarding this plugin, post your query in the support [forum](http://wordpress.org/support/plugin/mowster-tags "Support")
 
 
 == Installation ==
@@ -41,6 +52,12 @@ All supported by Yahoo! Term Extraction
 1. Button to `Fetch tags`.
 
 == Changelog ==  
+
+= 1.40 =
+* Optimized routines for plug-in activation, deactivation and uninstall
+* Options kept in serialized format
+* Ajax and wp_enqueue_script improved
+* New version upgrade check, admin_notices notifications
 
 = 1.31 = 
 * WordPress wp_enqueue_script optimized for scripts depending from jQuery
@@ -98,5 +115,5 @@ All supported by Yahoo! Term Extraction
 
 == Upgrade Notice ==
 
-= 1.30 =
-Stable version for WordPress 3.4
+= 1.40 =
+Plug-in structure redesign, optimized routines. Upgrade notifications to administrators if a new version is available.
