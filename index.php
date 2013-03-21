@@ -8,7 +8,7 @@
 	Author URI: http://jobs.mowster.net
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.40.2
+	Version: 1.40.3
 */
 
 if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
@@ -17,7 +17,7 @@ if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
 	die();
 }
 
-define('MWTAGS_VERSION', 		'1.40.2');
+define('MWTAGS_VERSION', 		'1.40.3');
 define('MWTAGS_PLUGIN_NAME',	'tags.mowster');
 define('MWTAGS_URL_PATH', 		WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)));
 define('MWTAGS_PLUGIN_PATH',	realpath(dirname(__FILE__)));
@@ -109,10 +109,6 @@ function mwtags_global_styles(){
 add_action('admin_print_styles', 'mwtags_global_styles'); 
 
 
-/* wp_ajax */
-add_action('wp_ajax_join_post_mwtags', 'join_post_mwtags');
-
-
 /* activation, deactivate, uninstall */
 function mwtags_plugin_activate(){
 	mwtags_options('activate');
@@ -152,6 +148,18 @@ function mwtags_options($action){
 
 	return;	
 }
+
+
+/* init */
+function mwtags_init(){
+	
+	if (is_admin()):
+		add_action('wp_ajax_join_post_mwtags', 'join_post_mwtags');
+	endif;
+	
+}
+add_action('admin_init', 'mwtags_init');
+
 
 
 /* admin_init */
@@ -195,4 +203,5 @@ function mwtags_admin_notices(){
 
 }
 add_action('admin_notices', 'mwtags_admin_notices');
+
 ?>

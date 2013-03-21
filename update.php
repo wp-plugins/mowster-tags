@@ -1,9 +1,11 @@
 <?php
 
-// security : block direct access
-if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) :
-	header('Location: http://wordpress.mowster.net'); die();
-endif;
+/* security : block direct access */
+if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
+	$location = 'http://'.substr($_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"], 0, strrpos($_SERVER["SERVER_NAME"].'/'.$_SERVER["REQUEST_URI"], '/wp-content/'));
+	header('Location: '.$location);
+	die();
+}
 
 
 /* pre_set_site_transient_update_plugins */
