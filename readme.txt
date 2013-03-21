@@ -3,7 +3,7 @@ Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.40.3
+Stable tag: 1.40.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,9 @@ All supported by Yahoo! Term Extraction
 1. Button to `Fetch tags`.
 
 == Changelog ==  
+
+= 1.40.4 =
+* bug fixed: unserialize warning removed
 
 = 1.40.3 =
 * Optimized ajax call in administration dashboard

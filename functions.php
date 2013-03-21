@@ -34,8 +34,8 @@ function mwtags_rt_settings(){
 
 	$rt_settings = new stdClass;
 	
-	$rt_settings->settings = unserialize(get_option('mwtags_settings'));
-	$rt_settings->api = unserialize(get_option('mwtags_api'));
+	$rt_settings->settings = @unserialize(get_option('mwtags_settings'));
+	$rt_settings->api = @unserialize(get_option('mwtags_api'));
 	
 	return $rt_settings;
 }
@@ -49,7 +49,7 @@ function mwtags_api_request($args, $action) {
 	
     if (is_wp_error($request) || 200 != wp_remote_retrieve_response_code($request)) return false;           
 		  
-    $response = unserialize(wp_remote_retrieve_body($request));
+    $response = @unserialize(wp_remote_retrieve_body($request));
 	
     if (is_object($response)) return $response;  
     else return false;  
