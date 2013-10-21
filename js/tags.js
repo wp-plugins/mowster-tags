@@ -49,9 +49,6 @@ jQuery(document).ready(function ($) {
 			jQuery.post(mowsterVars.mwtags_ajax_path, data,
 				function (response) {
 
-				alert(response);
-				return false;
-
 				var obj = jQuery.parseJSON(response);
 
 				if (obj.status == 'error') {

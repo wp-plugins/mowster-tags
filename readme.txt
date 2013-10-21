@@ -3,7 +3,7 @@ Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
 Tested up to: 3.6.1
-Stable tag: 1.5
+Stable tag: 1.51
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ With this plugin, you will be able to use the YQL Yahoo Content Analysis API ter
 It currently works with `all languages supported by YQL Content Analysis API`. 
 <a href="http://developer.yahoo.com/contentanalysis/">Yahoo Content Analysis API</a>
 
-= New in version 1.5 =
+= New in version 1.51 =
 * YQL Content Analysis API implemented replacing the deprecated Yahoo Term Extraction 
 * Translation pt-PT and es-ES updated
 
@@ -51,6 +51,9 @@ All supported by Yahoo! Term Extraction
 1. Button to `Fetch tags`.
 
 == Changelog ==  
+
+= 1.51 =
+* bug fixed: jQuery alert
 
 = 1.5 =
 * YQL Content Analysis API implemented to query tags, Yahoo Term Extraction deprecated. 
@@ -126,5 +129,5 @@ All supported by Yahoo! Term Extraction
 
 == Upgrade Notice ==
 
-= 1.5 =
-YQL Yahoo Content Analysis API implemented to query tags, Yahoo Term Extraction deprecated
+= 1.51 =
+YQL Yahoo Content Analysis API implemented to query tags, Yahoo Term Extraction deprecated. Minor bug fixed.
