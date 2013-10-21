@@ -30,51 +30,47 @@ jQuery(document).ready(function ($) {
 
 		var tags = jQuery(mowsterVars.mwtags_newtags).val();
 
-		if (content.length < 20) {
-			alert(mowsterVars.mwtags_insuficient_text);
-			jQuery("#mwtags").val(mowsterVars.mwtags_fetchTags);
-			return;
-		}
-
 		if (typeof text === 'string') {
 
 			jQuery(this).val(mowsterVars.mwtags_fetchingTags);
 			jQuery("#mowster_jobs_link").hide();
 			jQuery("#mowster_tags_ajax").show();
+
 			var count = jQuery("#mwtags_count").val();
 
-			jQuery.ajax({
-				type : "POST",
-				dataType : "text",
-				async : true,
-				timeout : 15000,
-				data : {
-					action : 'join_post_mwtags',
-					text : text,
-					count : count,
-					tags : tags
-				},
-				dataFilter : function (data, type) {
-					return data.replace(/<\/?[^>]+>/gi, "");
-				},
-				url : mowsterVars.mwtags_ajax_path,
-				success : function (data, textStatus) {
-					jQuery(mowsterVars.mwtags_newtags).focus();
-					jQuery(mowsterVars.mwtags_newtags).val(data);
-				},
-				error : function (request, textStatus) {
-					if ("timeout" == textStatus) {
-						alert(mowsterVars.mwtags_server_error);
-					} else {
-						alert(mowsterVars.mwtags_misc_error);
-					}
-				},
-				complete : function (request, textStatus) {
-					jQuery("#mwtags").val(mowsterVars.mwtags_fetchTags);
+			var data = {
+				action : 'join_post_mwtags',
+				text : text,
+				count : count,
+				tags : tags,
+				timeout : 10
+			};
+
+			jQuery.post(mowsterVars.mwtags_ajax_path, data,
+				function (response) {
+
+				alert(response);
+				return false;
+
+				var obj = jQuery.parseJSON(response);
+
+				if (obj.status == 'error') {
+					alert(obj.message);
 					jQuery("#mowster_jobs_link").show();
 					jQuery("#mowster_tags_ajax").hide();
+					return false;
 				}
+
+				jQuery(mowsterVars.mwtags_newtags).focus();
+				jQuery(mowsterVars.mwtags_newtags).val(obj.tags);
+
+				jQuery("#mwtags").val(mowsterVars.mwtags_fetchTags);
+				jQuery("#mowster_jobs_link").show();
+				jQuery("#mowster_tags_ajax").hide();
+
+				return false;
 			});
+
 		}
 	});
 });

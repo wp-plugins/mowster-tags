@@ -23,9 +23,15 @@ function mwtags_callback_trim_lower($x){
 
 
 /* return fetched tags */
-function mwtags_results($fetched_tags){
+function mwtags_results($fetched_tags, $status = null, $message = null){
 	
-	echo $fetched_tags; die();
+	echo json_encode(array(
+		'tags' => $fetched_tags,
+		'status' => $status,
+		'message' => $message
+	));
+	
+	die();
 }
 
 

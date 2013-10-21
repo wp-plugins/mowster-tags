@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: tags.mowster v1.40\n"
+"Project-Id-Version: tags.mowster v1.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-19 18:33-0000\n"
-"PO-Revision-Date: 2013-03-11 11:02-0000\n"
+"PO-Revision-Date: 2013-10-21 19:43:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: wordpress.mowster.net <wordpress@mowster.net>\n"
 "MIME-Version: 1.0\n"
@@ -14,33 +14,40 @@ msgstr ""
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
 "X-Poedit-Basepath: .\n"
-"X-Textdomain-Support: yes\n"
+"X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: ..\n"
+"X-Textdomain-Support: yes"
 
+#: index.php:53
 #@ mwtags
-#: index.php:45
 msgid "Fetch tags"
-msgstr "Buscar Tags"
+msgstr "Buscar tags"
 
+#: index.php:54
 #@ mwtags
-#: index.php:46
 msgid "Fetching tags..."
 msgstr "Buscando..."
 
+#: ajax/ajax.php:33
 #@ mwtags
-#: index.php:50
 msgid "Insufficient content text length."
 msgstr "Contenido del texto insuficiente para sugerir tags."
 
+#: ajax/ajax.php:55
 #@ mwtags
-#: index.php:51
-msgid "Yahoo server seems to be down at the moment. Please try again later."
-msgstr "El servidor de Yahoo parece estar offline. Por favor, inténtelo más tarde."
+msgid "Yahoo YQL server seems to be down at the moment. Please, try again within few seconds."
+msgstr "El servidor de YQL Yahoo parece estar offline. Por favor, inténtelo más tarde."
 
+#: ajax/ajax.php:59
 #@ mwtags
-#: index.php:52
-msgid "An error occurred. Please inform the creator of this plugin."
-msgstr "Se produjo un error. Por favor informe el administrador de este plugin."
+msgid "Yahoo YQL did not find any tags for the content provided."
+msgstr "El servidor de YQL Yahoo no ha encontrado tags para el contenido suministrado."
+
+#: index.php:195
+#, php-format
+#@ default
+msgid "There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">View version %4$s details</a> or <a href=\"%5$s\">update now</a>."
+msgstr "Hay una versión más reciente de %1$s disponible. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">Ver los detalles de la versión %4$s</a> o <a href=\"%5$s\">actualizar ahora</a>."
 

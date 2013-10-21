@@ -2,26 +2,25 @@
 Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 1.40.4
+Tested up to: 3.6.1
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Wordpress plugin for tag suggestions using Yahoo API.
+Wordpress plugin for tag suggestions using YQL Yahoo Content Analysis API.
 
 == Description ==
 
-With this plugin, you will be able to use the Yahoo API terms to get suggested tags for your posts. 
+With this plugin, you will be able to use the YQL Yahoo Content Analysis API terms to get suggested tags for your posts. 
 
-* Just click on `Fetch tags`. Title, content and optional excerpt of your post will be analyzed by Yahoo in order to find words that could be useful as tags. 
+* Just click on `Fetch tags`. Title, content and optional excerpt of your post will be analyzed by Yahoo to find words that may be useful as tags. 
 
-It currently works with `all languages supported by Yahoo! Term Extraction`. 
+It currently works with `all languages supported by YQL Content Analysis API`. 
+<a href="http://developer.yahoo.com/contentanalysis/">Yahoo Content Analysis API</a>
 
-= New in version 1.40 =
-* Optimized routines for plug-in activation, deactivation and uninstall
-* Options kept in serialized format
-* Ajax and wp_enqueue_script improved
-* New version upgrade check, admin_notices notifications
+= New in version 1.5 =
+* YQL Content Analysis API implemented replacing the deprecated Yahoo Term Extraction 
+* Translation pt-PT and es-ES updated
 
 = Translations =
 * Portuguese pt-PT
@@ -52,6 +51,10 @@ All supported by Yahoo! Term Extraction
 1. Button to `Fetch tags`.
 
 == Changelog ==  
+
+= 1.5 =
+* YQL Content Analysis API implemented to query tags, Yahoo Term Extraction deprecated. 
+* Translation pt-PT and es-ES updated
 
 = 1.40.4 =
 * bug fixed: unserialize warning removed
@@ -123,5 +126,5 @@ All supported by Yahoo! Term Extraction
 
 == Upgrade Notice ==
 
-= 1.40.3 =
-Optimized ajax call in administration dashboard.
+= 1.5 =
+YQL Yahoo Content Analysis API implemented to query tags, Yahoo Term Extraction deprecated

@@ -29,46 +29,63 @@ function join_post_mwtags(){
 		
 	/* post content */
 	$content = trim($text);
-	if (empty($content)) mwtags_results($tags);
-			
-			
-	/* build params */
-	$param = 'appid=h4c6gyLV34Fs7nHCrHUew7XDAU8YeQ_PpZVrzgAGih2mU12F0cI.ezr6e7FMvskR7Vu.AA--'; /* yahoo id */
-	$param .= '&context='.urlencode($content); /* post content */
-	if (!empty($tags)):
-		$param .= '&query='.urlencode($tags); /* existing tags */
+	if (strlen($content) < 20) :
+		mwtags_results($tags, 'error', __('Insufficient content text length.', MWTAGS_MAIN_ACTION));
 	endif;
-	$param .= '&output=json'; 
 			
-			
-	/* post array */
-	$response = wp_remote_post('http://search.yahooapis.com/ContentAnalysisService/V1/termExtraction', array('body' =>$param) );
 
-	if (!is_wp_error($response) && $response['response']['code'] == 200) $data = json_decode(maybe_unserialize($response['body']));
-	else mwtags_results($tags);
+	/* build url params */
+	$url = 'http://query.yahooapis.com/v1/public/yql?q=';
 	
-	if (empty($data) || empty($data->ResultSet->Result) || is_wp_error($data)) mwtags_results($tags);
+	$q = urlencode( sprintf('select * from search.termextract where context = "%s"', utf8_decode(addslashes(str_replace('"', ' ', strip_tags($content))))) ); /* post content */
+	if (!empty($tags)):
+		$url .= $q.urlencode(' and query="'.$tags.'"');	/* existing tags */	
+	else:
+		$url .= $q;
+	endif;
+	$url .= '&format=json&diagnostics=true';
+	
+			
+	/* get request */
+	$response = wp_remote_get($url, $args = array('timeout' => $_REQUEST['timeout']));
+	
+	if (!is_wp_error($response) && $response['response']['code'] == 200):
+		$data = json_decode(maybe_unserialize($response['body']));
+	else:
+		mwtags_results($tags, 'error', __('Yahoo YQL server seems to be down at the moment. Please, try again within few seconds.', MWTAGS_MAIN_ACTION));
+	endif;
 
-		
-	/* unique terms */
-	$data = array_unique($data->ResultSet->Result);
-	array_filter($data, 'mwtags_callback_limit');
-		
+	if (empty($data) || empty($data->query->results->Result)) :
+		mwtags_results($tags, 'error', __('Yahoo YQL did not find any tags for the content provided.', MWTAGS_MAIN_ACTION));
+	endif;
+	
+	
+	/* process tags */
+	$new_tags = array_unique($data->query->results->Result); /* avoid repeated terms */	
+	$new_tags = array_filter($new_tags, 'mwtags_callback_limit'); /* eliminate small tags */
+	
+	
+	/* check existing tags */
 	$check_tags = array_map('mwtags_callback_trim_lower', (explode(',', $tags)));
-
 	
-	/* display terms */
-	$display = null; $limit = null;
-	foreach ($data as $term) :		
-		if (!in_array($term, $check_tags)) $display .= esc_html($term).",";
+	$display = null; $limit = null;	
+	foreach ($new_tags as $tag) :		
+		if (!in_array(mwtags_callback_trim_lower($tag), $check_tags)):
+			$display .= esc_html($tag).",";
+		endif;
 		$limit++;	
-		if ($limit == $count) break;
+		if ($limit == $count) :
+			break;
+		endif;
 	endforeach;
 	
-	if ($tags && substr($tags,-1) != ',') $tags .= ",";
-	mwtags_results($tags.trim($display, ','));
-
 	
+	/* display terms */
+	if (!empty($tags) && substr($tags,-1) != ','):
+		$tags .= ",";
+	endif;
+	
+	mwtags_results( $tags.trim($display, ',') );	
 	die();
 }
 ?>
