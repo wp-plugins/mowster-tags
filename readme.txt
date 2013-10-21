@@ -7,7 +7,7 @@ Stable tag: 1.52
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Wordpress plugin for tag suggestions using YQL Yahoo Content Analysis API.
+Tags suggestions using YQL Yahoo Content Analysis API.
 
 == Description ==
 
@@ -16,7 +16,8 @@ With this plugin, you will be able to use the YQL Yahoo Content Analysis API ter
 * Just click on `Fetch tags`. Title, content and optional excerpt of your post will be analyzed by Yahoo to find words that may be useful as tags. 
 
 It currently works with `all languages supported by YQL Content Analysis API`. 
-<a href="http://developer.yahoo.com/contentanalysis/">Yahoo Content Analysis API</a>
+
+<a href="http://developer.yahoo.com/contentanalysis/">Yahoo Content Analysis API</a> platform
 
 = New in version 1.52 =
 * YQL Content Analysis API implemented replacing the deprecated Yahoo Term Extraction 
@@ -27,8 +28,7 @@ It currently works with `all languages supported by YQL Content Analysis API`.
 * Spanish es-ES
 
 = Support =
-* If you have any suggestion or need assistance regarding this plugin, post your query in the support
-* [Forum](http://wordpress.org/support/plugin/mowster-tags "Support")
+* If you have any suggestion or need assistance regarding this plugin, post your query in the support [Forum](http://wordpress.org/support/plugin/mowster-tags "Support")
 
 <strong>Plugin Site</strong> <a href="http://wordpress.mowster.net">wordpress.mowster.net</a> | <strong>Credits</strong> <a href="http://jobs.mowster.net">jobs.mowster.net</a>
 
@@ -44,7 +44,7 @@ It currently works with `all languages supported by YQL Content Analysis API`.
 
 = Which languages are supported? =
 
-All supported by Yahoo! Term Extraction
+All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo Content Analysis API</a>
 
 == Screenshots ==
 
