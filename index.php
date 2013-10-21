@@ -3,7 +3,7 @@
 /*
 	Plugin Name: tags.mowster
 	Plugin URI: http://wordpress.mowster.net
-	Description: Wordpress plugin for tag suggestions using YQL Yahoo Content Analysis API
+	Description: Tags suggestions using YQL Yahoo Content Analysis API
 	Author: mowster
 	Author URI: http://jobs.mowster.net
 	License: GPLv2 or later
