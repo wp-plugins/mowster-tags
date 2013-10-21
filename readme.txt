@@ -3,7 +3,7 @@ Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
 Tested up to: 3.6.1
-Stable tag: 1.52
+Stable tag: 1.53
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ It currently works with `all languages supported by YQL Content Analysis API`.
 
 <a href="http://developer.yahoo.com/contentanalysis/">Yahoo Content Analysis API</a> platform
 
-= New in version 1.52 =
+= New in version 1.53 =
 * YQL Content Analysis API implemented replacing the deprecated Yahoo Term Extraction 
 * Translation pt-PT and es-ES updated
 
@@ -52,7 +52,7 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Changelog ==  
 
-= 1.52 =
+= 1.53 =
 * Plug-in description updated
 
 = 1.51 =
@@ -132,5 +132,5 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Upgrade Notice ==
 
-= 1.52 =
+= 1.53 =
 YQL Yahoo Content Analysis API implemented to query tags, Yahoo Term Extraction deprecated.
