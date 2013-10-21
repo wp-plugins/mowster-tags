@@ -53,6 +53,8 @@ jQuery(document).ready(function ($) {
 
 				if (obj.status == 'error') {
 					alert(obj.message);
+
+					jQuery("#mwtags").val(mowsterVars.mwtags_fetchTags);
 					jQuery("#mowster_jobs_link").show();
 					jQuery("#mowster_tags_ajax").hide();
 					return false;
