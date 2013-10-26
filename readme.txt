@@ -2,8 +2,8 @@
 Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
-Tested up to: 3.6.1
-Stable tag: 1.53
+Tested up to: 3.7
+Stable tag: 1.54
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,9 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 1. Button to `Fetch tags`.
 
 == Changelog ==  
+
+= 1.54 =
+* WordPress 3.7 compatible
 
 = 1.53 =
 * Plug-in description updated
@@ -132,5 +135,5 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Upgrade Notice ==
 
-= 1.53 =
-YQL Yahoo Content Analysis API implemented to query tags, Yahoo Term Extraction deprecated.
+= 1.54 =
+WordPress 3.7 compatible
