@@ -37,7 +37,8 @@ function join_post_mwtags(){
 	/* build url params */
 	$url = 'http://query.yahooapis.com/v1/public/yql?q=';
 	
-	$q = urlencode( sprintf('select * from search.termextract where context = "%s"', utf8_decode(addslashes(str_replace('"', ' ', strip_tags($content))))) ); /* post content */
+	$content = addslashes(str_replace('"', ' ', strip_tags($content)));
+	$q = urlencode( sprintf('select * from search.termextract where context = "%s"', $content) ); /* post content */
 	if (!empty($tags)):
 		$url .= $q.urlencode(' and query="'.$tags.'"');	/* existing tags */	
 	else:
@@ -59,11 +60,9 @@ function join_post_mwtags(){
 		mwtags_results($tags, 'error', __('Yahoo YQL did not find any tags for the content provided.', MWTAGS_MAIN_ACTION));
 	endif;
 	
-	
 	/* process tags */
 	$new_tags = array_unique($data->query->results->Result); /* avoid repeated terms */	
 	$new_tags = array_filter($new_tags, 'mwtags_callback_limit'); /* eliminate small tags */
-	
 	
 	/* check existing tags */
 	$check_tags = array_map('mwtags_callback_trim_lower', (explode(',', $tags)));
@@ -71,7 +70,7 @@ function join_post_mwtags(){
 	$display = null; $limit = null;	
 	foreach ($new_tags as $tag) :		
 		if (!in_array(mwtags_callback_trim_lower($tag), $check_tags)):
-			$display .= esc_html($tag).",";
+			$display .= esc_html($tag).","; 
 		endif;
 		$limit++;	
 		if ($limit == $count) :

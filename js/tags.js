@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
 		var tags = jQuery(mowsterVars.mwtags_newtags).val();
 
 		if (typeof text === 'string') {
-
+		
 			jQuery(this).val(mowsterVars.mwtags_fetchingTags);
 			jQuery("#mowster_jobs_link").hide();
 			jQuery("#mowster_tags_ajax").show();

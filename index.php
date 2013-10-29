@@ -8,7 +8,7 @@
 	Author URI: http://jobs.mowster.net
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.54
+	Version: 1.55
 */
 
 if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
@@ -17,7 +17,7 @@ if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
 	die();
 }
 
-define('MWTAGS_VERSION',            '1.54');
+define('MWTAGS_VERSION',            '1.55');
 define('MWTAGS_PLUGIN_NAME',        'tags.mowster');
 define('MWTAGS_MAIN_ACTION',        'mwtags');
 define('MWTAGS_URL_PATH',           WP_PLUGIN_URL.'/'.str_replace(basename(__FILE__),"",plugin_basename(__FILE__)));
@@ -148,18 +148,6 @@ function mwtags_options($action){
 }
 
 
-/* init */
-function mwtags_init(){
-	
-	if (is_admin()):
-		add_action('wp_ajax_join_post_mwtags', 'join_post_mwtags');
-	endif;
-	
-}
-add_action('admin_init', 'mwtags_init');
-
-
-
 /* admin_init */
 function mwtags_admin_init(){
 
@@ -173,6 +161,9 @@ function mwtags_admin_init(){
 	/* settings */
 	global $mwtags_st;	
 	if (!is_object($mwtags_st)) $mwtags_st = mwtags_rt_settings();	
+	
+	/* ajax action */
+	add_action('wp_ajax_join_post_mwtags', 'join_post_mwtags');	
 	
 	require_once(MWTAGS_PLUGIN_PATH . '/update.php');	
 	

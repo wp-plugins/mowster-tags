@@ -2,8 +2,8 @@
 Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
-Tested up to: 3.7
-Stable tag: 1.54
+Tested up to: 3.7.1
+Stable tag: 1.55
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,10 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 1. Button to `Fetch tags`.
 
 == Changelog ==  
+
+= 1.55 =
+* bug fixed: decoding chars output for non-English languages
+* Hooks optimization for faster performance
 
 = 1.54 =
 * WordPress 3.7 compatible
@@ -135,5 +139,5 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Upgrade Notice ==
 
-= 1.54 =
-WordPress 3.7 compatible
+= 1.55 =
+Hooks optimization for faster performance, bug fixed: decoding chars output
