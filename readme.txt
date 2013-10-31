@@ -3,7 +3,7 @@ Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 1.55
+Stable tag: 1.56
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ It currently works with `all languages supported by YQL Content Analysis API`.
 
 <a href="http://developer.yahoo.com/contentanalysis/">Yahoo Content Analysis API</a> platform
 
-= New in version 1.53 =
+= New in version 1.56 =
 * YQL Content Analysis API implemented replacing the deprecated Yahoo Term Extraction 
 * Translation pt-PT and es-ES updated
 
@@ -35,9 +35,11 @@ It currently works with `all languages supported by YQL Content Analysis API`.
 
 == Installation ==
 
-1. Download the mowster-Tags.zip file to your computer.
-2. Unzip the file.
-3. Upload `mowster-tags` folder to the `/wp-content/plugins/` directory.
+To do a new installation of the plugin, please follow these steps
+
+1. Download the mowster-tags.zip file to your computer.
+2. Unzip the file 
+3. Upload `mowster-tags` folder to the `/wp-content/plugins/` directory
 4. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Frequently Asked Questions ==
@@ -51,6 +53,9 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 1. Button to `Fetch tags`.
 
 == Changelog ==  
+
+= 1.56 =
+* upgrade required: functions.php encoding fixed
 
 = 1.55 =
 * bug fixed: decoding chars output for non-English languages
@@ -139,5 +144,5 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Upgrade Notice ==
 
-= 1.55 =
-Hooks optimization for faster performance, bug fixed: decoding chars output
+= 1.56 =
+important upgrade: functions.php encoding fixed

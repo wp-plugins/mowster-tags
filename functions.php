@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /* security : block direct access */
 if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
