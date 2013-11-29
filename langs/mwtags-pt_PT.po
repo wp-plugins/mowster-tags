@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: tags.mowster v1.54\n"
+"Project-Id-Version: tags.mowster v1.57\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-19 18:34-0000\n"
-"PO-Revision-Date: 2013-10-26 14:05:12+0000\n"
+"PO-Revision-Date: 2013-11-29 21:44:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: wordpress.mowster.net <wordpress@mowster.net>\n"
 "MIME-Version: 1.0\n"
@@ -35,19 +35,34 @@ msgstr "Procurando..."
 msgid "Insufficient content text length."
 msgstr "Texto insuficiente para sugerir etiquetas"
 
-#: ajax/ajax.php:55
-#@ mwtags
-msgid "Yahoo YQL server seems to be down at the moment. Please, try again within few seconds."
-msgstr "O servidor YQL Yahoo encontra-se offline. Por favor, tente mais tarde."
-
-#: ajax/ajax.php:59
+#: ajax/ajax.php:68
 #@ mwtags
 msgid "Yahoo YQL did not find any tags for the content provided."
 msgstr "O servidor YQL Yahoo não encontrou tags para o conteúdo providenciado."
 
-#: index.php:195
+#: index.php:186
 #, php-format
 #@ default
 msgid "There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">View version %4$s details</a> or <a href=\"%5$s\">update now</a>."
 msgstr "Há uma nova versão de %1$s disponível. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">Ver os detalhes da versão %4$s</a> ou <a href=\"%5$s\">atualize agora</a>."
+
+#: ajax/ajax.php:56
+#@ mwtags
+msgid "Yahoo YQL server did not reply due one of the following reasons:"
+msgstr "O servidor YQL Yahoo não respondeu devido a uma das seguintes razões:"
+
+#: ajax/ajax.php:58
+#@ mwtags
+msgid "2. Your IP reached the 2000 limit requests per hour accepted, register at Yahoo for an API key."
+msgstr "2. O seu IP atingiu o limite de 2000 pedidos por hora, registe-se no Yahoo para obter uma chave API."
+
+#: ajax/ajax.php:62
+#@ mwtags
+msgid "Text length is over 7200 characters, use a lower post content."
+msgstr "A extensão do texto é superior a 7200 caracteres, utilize um conteúdo inferior no artigo."
+
+#: ajax/ajax.php:57
+#@ mwtags
+msgid "1. Remote Yahoo service is down, try again within few seconds."
+msgstr "1. O servidor remoto Yahoo encontra-se offline, tente de novo dentro de breves segundos."
 

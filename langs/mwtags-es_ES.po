@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: tags.mowster v1.54\n"
+"Project-Id-Version: tags.mowster v1.57\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-19 18:33-0000\n"
-"PO-Revision-Date: 2013-10-26 14:05:18+0000\n"
+"PO-Revision-Date: 2013-11-29 21:51:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: wordpress.mowster.net <wordpress@mowster.net>\n"
 "MIME-Version: 1.0\n"
@@ -35,19 +35,34 @@ msgstr "Buscando..."
 msgid "Insufficient content text length."
 msgstr "Contenido del texto insuficiente para sugerir tags."
 
-#: ajax/ajax.php:55
-#@ mwtags
-msgid "Yahoo YQL server seems to be down at the moment. Please, try again within few seconds."
-msgstr "El servidor de YQL Yahoo parece estar offline. Por favor, inténtelo más tarde."
-
-#: ajax/ajax.php:59
+#: ajax/ajax.php:68
 #@ mwtags
 msgid "Yahoo YQL did not find any tags for the content provided."
-msgstr "El servidor de YQL Yahoo no ha encontrado tags para el contenido suministrado."
+msgstr "El servidor de YQL Yahoo no encontró tags para el contenido suministrado."
 
-#: index.php:195
+#: index.php:186
 #, php-format
 #@ default
 msgid "There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">View version %4$s details</a> or <a href=\"%5$s\">update now</a>."
 msgstr "Hay una versión más reciente de %1$s disponible. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">Ver los detalles de la versión %4$s</a> o <a href=\"%5$s\">actualizar ahora</a>."
+
+#: ajax/ajax.php:56
+#@ mwtags
+msgid "Yahoo YQL server did not reply due one of the following reasons:"
+msgstr "El servidor de YQL Yahoo no contestó por una de las siguientes razones:"
+
+#: ajax/ajax.php:58
+#@ mwtags
+msgid "2. Your IP reached the 2000 limit requests per hour accepted, register at Yahoo for an API key."
+msgstr "2. Su dirección IP alcanzó el limite de 2000 pedidos por hora, darse de alta en Yahoo para obtener una clave API."
+
+#: ajax/ajax.php:62
+#@ mwtags
+msgid "Text length is over 7200 characters, use a lower post content."
+msgstr "La extensión del texto es superior a 7200 caracteres, utilice un contenido inferior en el articulo."
+
+#: ajax/ajax.php:57
+#@ mwtags
+msgid "1. Remote Yahoo service is down, try again within few seconds."
+msgstr "1. El servidor de YQL Yahoo parece estar offline, inténtelo de nuevo en unos segundos."
 

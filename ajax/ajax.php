@@ -53,7 +53,15 @@ function join_post_mwtags(){
 	if (!is_wp_error($response) && $response['response']['code'] == 200):
 		$data = json_decode(maybe_unserialize($response['body']));
 	else:
-		mwtags_results($tags, 'error', __('Yahoo YQL server seems to be down at the moment. Please, try again within few seconds.', MWTAGS_MAIN_ACTION));
+		$msg = __('Yahoo YQL server did not reply due one of the following reasons:', MWTAGS_MAIN_ACTION) . "\n"; 		
+		$msg .= __('1. Remote Yahoo service is down, try again within few seconds.', MWTAGS_MAIN_ACTION) . "\n";
+		$msg .= __('2. Your IP reached the 2000 limit requests per hour accepted, register at Yahoo for an API key.', MWTAGS_MAIN_ACTION); 				
+		
+		/* text lenght warning */
+		if (strlen($content) >= 7280) :	
+			$msg = __('Text length is over 7200 characters, use a lower post content.', MWTAGS_MAIN_ACTION); 		
+		endif;
+		mwtags_results($tags, 'error', $msg);
 	endif;
 
 	if (empty($data) || empty($data->query->results->Result)) :

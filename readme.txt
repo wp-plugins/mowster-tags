@@ -3,7 +3,7 @@ Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 1.56
+Stable tag: 1.57
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ It currently works with `all languages supported by YQL Content Analysis API`.
 
 <a href="http://developer.yahoo.com/contentanalysis/">Yahoo Content Analysis API</a> platform
 
-= New in version 1.56 =
+= New in version 1.5 =
 * YQL Content Analysis API implemented replacing the deprecated Yahoo Term Extraction 
 * Translation pt-PT and es-ES updated
 
@@ -54,11 +54,16 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Changelog ==  
 
+= 1.57 =
+* Post content length limitation
+* Remote service down and hourly limit warning improved
+* Translation pt-PT and es-ES updated
+
 = 1.56 =
-* upgrade required: functions.php encoding fixed
+* bug fixed (critical): functions.php encoding fixed
 
 = 1.55 =
-* bug fixed: decoding chars output for non-English languages
+* bug fixed (normal): decoding chars output for non-English languages
 * Hooks optimization for faster performance
 
 = 1.54 =
@@ -68,14 +73,14 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 * Plug-in description updated
 
 = 1.51 =
-* bug fixed: jQuery alert
+* bug fixed (low): jQuery alert
 
 = 1.5 =
 * YQL Content Analysis API implemented to query tags, Yahoo Term Extraction deprecated. 
 * Translation pt-PT and es-ES updated
 
 = 1.40.4 =
-* bug fixed: unserialize warning removed
+* bug fixed (normal): unserialize warning removed
 
 = 1.40.3 =
 * Optimized ajax call in administration dashboard
@@ -86,7 +91,7 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 * Ajax and wp_enqueue_script improved
 * New version upgrade check, admin_notices notifications
 * Tested with Firefox, Chrome, Internet Explorer, Safari and Opera
-* bug fixed: upgrade notification, translation
+* bug fixed (low): upgrade notification, translation
 
 = 1.31 = 
 * WordPress wp_enqueue_script optimized for scripts depending from jQuery
@@ -109,13 +114,13 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 * Spanish and Portuguese translations added
 
 = 1.18 =
-* small improvements to avoid conflicts with others plugins
+* Code optimized to avoid conflicts with others plugins
 
 = 1.17 =
-* Security optimized
+* Security increased
 
 = 1.16 =
-* bug fixed: callback function
+* bug fixed (critical): callback function
 
 = 1.15 =
 * Hooks only loaded in new-page script
@@ -124,13 +129,13 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 * Hooks improved, performance optimized
 
 = 1.13 =
-* bug fixed: jQuery Fetch button
+* bug fixed (normal): jQuery Fetch button
 
 = 1.12 =
 * jQuery code optimized
 
 = 1.11 =
-* bug fixed: PHP versions [upto 5.3.0] that does not support anonymous functions
+* bug fixed (critical): PHP versions [upto 5.3.0] that does not support anonymous functions
 
 = 1.1 =
 * Drop-down limit fixed
@@ -144,5 +149,5 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Upgrade Notice ==
 
-= 1.56 =
-important upgrade: functions.php encoding fixed
+= 1.57 =
+Post content length limitation. Remote service down and hourly limit warning improved.
