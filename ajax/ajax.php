@@ -38,6 +38,12 @@ function join_post_mwtags(){
 	$url = 'http://query.yahooapis.com/v1/public/yql?q=';
 	
 	$content = addslashes(str_replace('"', ' ', strip_tags($content)));
+	/* text lenght warning */
+	if (strlen($content) >= 7280) :		
+		$content = substr($content, 0, 7000);
+		$warning = __('Text length is over the limit handled by Yahoo. Only first 7000 chars were analyzed to find related tags.', MWTAGS_MAIN_ACTION); 		
+	endif;	
+	
 	$q = urlencode( sprintf('select * from search.termextract where context = "%s"', $content) ); /* post content */
 	if (!empty($tags)):
 		$url .= $q.urlencode(' and query="'.$tags.'"');	/* existing tags */	
@@ -50,17 +56,13 @@ function join_post_mwtags(){
 	/* get request */
 	$response = wp_remote_get($url, $args = array('timeout' => $_REQUEST['timeout']));
 	
-	if (!is_wp_error($response) && $response['response']['code'] == 200):
+	if (!is_wp_error($response) && isset($response['response']['code']) && $response['response']['code'] == 200):
 		$data = json_decode(maybe_unserialize($response['body']));
 	else:
 		$msg = __('Yahoo YQL server did not reply due one of the following reasons:', MWTAGS_MAIN_ACTION) . "\n"; 		
 		$msg .= __('1. Remote Yahoo service is down, try again within few seconds.', MWTAGS_MAIN_ACTION) . "\n";
 		$msg .= __('2. Your IP reached the 2000 limit requests per hour accepted, register at Yahoo for an API key.', MWTAGS_MAIN_ACTION); 				
 		
-		/* text lenght warning */
-		if (strlen($content) >= 7280) :	
-			$msg = __('Text length is over 7200 characters, use a lower post content.', MWTAGS_MAIN_ACTION); 		
-		endif;
 		mwtags_results($tags, 'error', $msg);
 	endif;
 
@@ -92,7 +94,13 @@ function join_post_mwtags(){
 		$tags .= ",";
 	endif;
 	
-	mwtags_results( $tags.trim($display, ',') );	
+	$output = $tags.trim($display, ',');
+	
+	if (empty($warning)):
+		mwtags_results( $output );	
+	else:
+		mwtags_results( $output, 'warning', $warning );	
+	endif;
 	die();
 }
 ?>

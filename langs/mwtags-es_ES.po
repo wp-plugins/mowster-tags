@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: tags.mowster v1.57\n"
+"Project-Id-Version: tags.mowster v1.60\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-19 18:33-0000\n"
-"PO-Revision-Date: 2013-11-29 21:51:47+0000\n"
+"PO-Revision-Date: 2014-04-29 13:53:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: wordpress.mowster.net <wordpress@mowster.net>\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Buscando..."
 msgid "Insufficient content text length."
 msgstr "Contenido del texto insuficiente para sugerir tags."
 
-#: ajax/ajax.php:68
+#: ajax/ajax.php:70
 #@ mwtags
 msgid "Yahoo YQL did not find any tags for the content provided."
 msgstr "El servidor de YQL Yahoo no encontró tags para el contenido suministrado."
@@ -46,23 +46,23 @@ msgstr "El servidor de YQL Yahoo no encontró tags para el contenido suministrad
 msgid "There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">View version %4$s details</a> or <a href=\"%5$s\">update now</a>."
 msgstr "Hay una versión más reciente de %1$s disponible. <a href=\"%2$s\" class=\"thickbox\" title=\"%3$s\">Ver los detalles de la versión %4$s</a> o <a href=\"%5$s\">actualizar ahora</a>."
 
-#: ajax/ajax.php:56
+#: ajax/ajax.php:62
 #@ mwtags
 msgid "Yahoo YQL server did not reply due one of the following reasons:"
 msgstr "El servidor de YQL Yahoo no contestó por una de las siguientes razones:"
 
-#: ajax/ajax.php:58
+#: ajax/ajax.php:64
 #@ mwtags
 msgid "2. Your IP reached the 2000 limit requests per hour accepted, register at Yahoo for an API key."
 msgstr "2. Su dirección IP alcanzó el limite de 2000 pedidos por hora, darse de alta en Yahoo para obtener una clave API."
 
-#: ajax/ajax.php:62
-#@ mwtags
-msgid "Text length is over 7200 characters, use a lower post content."
-msgstr "La extensión del texto es superior a 7200 caracteres, utilice un contenido inferior en el articulo."
-
-#: ajax/ajax.php:57
+#: ajax/ajax.php:63
 #@ mwtags
 msgid "1. Remote Yahoo service is down, try again within few seconds."
 msgstr "1. El servidor de YQL Yahoo parece estar offline, inténtelo de nuevo en unos segundos."
+
+#: ajax/ajax.php:44
+#@ mwtags
+msgid "Text length is over the limit handled by Yahoo. Only first 7000 chars were analyzed to find related tags."
+msgstr "La longitud del texto es superior al límite permitido por Yahoo. Sólo se analizaron los primeros 7.000 caracteres para encontrar tags relacionadas."
 

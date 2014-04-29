@@ -18,11 +18,12 @@ jQuery(document).ready(function ($) {
 
 	jQuery("#mwtags").click(function (e) {
 
-		var content = (typeof tinyMCE == "undefined" ||
-			typeof tinyMCE.getInstanceById("content") == "undefined" ||
-			tinyMCE.getInstanceById("content").isHidden()) ?
+		var content = (
+			typeof tinyMCE == "undefined" ||
+			typeof tinyMCE.get("content") == "undefined" ||
+			tinyMCE.get("content").isHidden()) ?
 		"<div>" + jQuery("#content").val() + "</div>" :
-		tinyMCE.getInstanceById("content").getContent();
+		tinyMCE.get("content").getContent();
 
 		var text = jQuery("#title").val() + " " +
 			(typeof content === 'string' ? jQuery(content).text() : "") + " " +
@@ -58,6 +59,10 @@ jQuery(document).ready(function ($) {
 					jQuery("#mowster_jobs_link").show();
 					jQuery("#mowster_tags_ajax").hide();
 					return false;
+				}
+				
+				if (obj.status == 'warning') {
+					alert(obj.message);
 				}
 
 				jQuery(mowsterVars.mwtags_newtags).focus();

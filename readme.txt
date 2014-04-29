@@ -2,8 +2,8 @@
 Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
-Tested up to: 3.7.1
-Stable tag: 1.57
+Tested up to: 3.9
+Stable tag: 1.60
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,9 +19,9 @@ It currently works with `all languages supported by YQL Content Analysis API`.
 
 <a href="http://developer.yahoo.com/contentanalysis/">Yahoo Content Analysis API</a> platform
 
-= New in version 1.5 =
-* YQL Content Analysis API implemented replacing the deprecated Yahoo Term Extraction 
-* Translation pt-PT and es-ES updated
+= New in version 1.60 =
+* WordPress 3.9 supported
+* In case of overlimit post text size, analyze first 7000 chars of the post to find related tags - Yahoo limitation
 
 = Translations =
 * Portuguese pt-PT
@@ -53,6 +53,10 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 1. Button to `Fetch tags`.
 
 == Changelog ==  
+
+= 1.60 =
+* WordPress 3.9 supported
+* In case of overlimit post text size, analyze first 7000 chars of the post to find related tags - Yahoo limitation
 
 = 1.57 =
 * Post content length limitation
@@ -149,5 +153,5 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Upgrade Notice ==
 
-= 1.57 =
-Post content length limitation. Remote service down and hourly limit warning improved.
+= 1.60 =
+WordPress 3.9 supported. In case of overlimit post text size, analyze first 7000 chars of the post to find related tags - Yahoo limitation
