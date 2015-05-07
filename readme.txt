@@ -2,8 +2,8 @@
 Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
-Tested up to: 4.0
-Stable tag: 1.61
+Tested up to: 4.2.2
+Stable tag: 1.62
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,8 +19,8 @@ It currently works with `all languages supported by YQL Content Analysis API`.
 
 <a href="http://developer.yahoo.com/contentanalysis/">Yahoo Content Analysis API</a> platform
 
-= New in version 1.61 =
-* WordPress 4.0 supported
+= New in version 1.62 =
+* Images converted to Data URIs
 
 = Translations =
 * Portuguese pt-PT
@@ -53,7 +53,10 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Changelog ==  
 
-= New in version 1.61 =
+= New in version 1.62 =
+* Images converted to Data URIs
+
+= 1.61 =
 * WordPress 4.0 supported
 
 = 1.60 =
@@ -155,5 +158,5 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Upgrade Notice ==
 
-= 1.61 =
-WordPress 4.0 supported.
+= 1.62 =
+Images converted to Data URIs.
