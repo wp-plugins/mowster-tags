@@ -2,12 +2,12 @@ jQuery(document).ready(function ($) {
 
 	var myArray = ["5", "10", "15", "20", "30", "40", "50", "60", "70", "80", "90", "100"];
 	var mwtags_select_options = '';
-
+	
 	for (i = 0; i < myArray.length; i++) {
 		if (myArray[i] == mowsterVars.mwtags_countTags) {
-			var mwtags_select_options = mwtags_select_options + '<option value="' + myArray[i] + '" selected>' + myArray[i] + '</option>';
+			mwtags_select_options += '<option value="' + myArray[i] + '" selected>' + myArray[i] + '</option>';
 		} else
-			mwtags_select_options = mwtags_select_options + '<option value="' + myArray[i] + '">' + myArray[i] + '</option>';
+			mwtags_select_options += '<option value="' + myArray[i] + '">' + myArray[i] + '</option>';
 	}
 
 	jQuery(mowsterVars.mwtags_html_add_to).prepend("<div style=\"margin-bottom: 5px;\"><input type=\"button\" class=\"button\" value=\"" + mowsterVars.mwtags_fetchTags + "\" id=\"mwtags\" style=\"vertical-align: middle;\" /> <select name=\"mwtags_count\" id=\"mwtags_count\">" + mwtags_select_options + "</select>  " +
@@ -21,19 +21,19 @@ jQuery(document).ready(function ($) {
 
 	jQuery("#mowster_tags_ajax").hide();
 
-	jQuery("#mwtags").click(function (e) {
-
+	jQuery("#mwtags").click(function (e) {	
+		
 		var content = (
 			typeof tinyMCE == "undefined" ||
-			typeof tinyMCE.get("content") == "undefined" ||
-			tinyMCE.get("content").isHidden()) ?
+			tinyMCE.activeEditor == null ||
+			tinyMCE.activeEditor.isHidden() != false) ?
 		"<div>" + jQuery("#content").val() + "</div>" :
 		tinyMCE.get("content").getContent();
-
+		
 		var text = jQuery("#title").val() + " " +
-			(typeof content === 'string' ? jQuery(content).text() : "") + " " +
-			jQuery("#excerpt").val();
-
+			jQuery("#excerpt").val() + " " +
+			(typeof content === 'string' ? jQuery(content).text() : "") + " ";
+		
 		var tags = jQuery(mowsterVars.mwtags_newtags).val();
 
 		if (typeof text === 'string') {
@@ -59,6 +59,7 @@ jQuery(document).ready(function ($) {
 
 				if (obj.status == 'error') {
 					alert(obj.message);
+					console.log(obj.message);
 
 					jQuery("#mwtags").val(mowsterVars.mwtags_fetchTags);
 					jQuery("#mowster_jobs_link").show();
@@ -68,6 +69,7 @@ jQuery(document).ready(function ($) {
 				
 				if (obj.status == 'warning') {
 					alert(obj.message);
+					console.log(obj.message);
 				}
 
 				jQuery(mowsterVars.mwtags_newtags).focus();

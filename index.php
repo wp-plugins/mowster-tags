@@ -8,7 +8,7 @@
 	Author URI: http://jobs.mowster.net
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.62
+	Version: 1.70
 */
 
 if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
@@ -17,7 +17,7 @@ if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
 	die();
 }
 
-define('MWTAGS_VERSION',            '1.62');
+define('MWTAGS_VERSION',            '1.70');
 define('MWTAGS_PLUGIN_NAME',        'tags.mowster');
 define('MWTAGS_MAIN_ACTION',        'mwtags');
 define('MWTAGS_URL_PATH',           WP_PLUGIN_URL.'/'.str_replace(basename(__FILE__),"",plugin_basename(__FILE__)));
@@ -27,6 +27,7 @@ define('MWTAGS_PLUGIN_SLUG',        rtrim(str_replace(basename(__FILE__),"",plug
 define('MWTAGS_BASENAME',           plugin_basename(__FILE__));
 define('MWTAGS_CHARSET',            get_bloginfo('charset'));
 define('MWTAGS_SITE_URL',           get_bloginfo('url'));
+define('MWTAGS_DEFAULT_COUNT',     	20);
 
 
 
@@ -36,9 +37,9 @@ function mwtags_scripts(){
 	/* jquery */
 	wp_enqueue_script('jquery');	
 	
-	/* settings */
-	global $mwtags_st;
-	if (!is_object($mwtags_st)) $mwtags_st = mwtags_rt_settings();		
+	/* user_meta */
+	$count = get_user_meta(get_current_user_id(), 'mwtags_count', true);
+	if (empty($count)) $count = MWTAGS_DEFAULT_COUNT;
 	
 	/* enqueue on posts */
 	global $post;
@@ -47,7 +48,7 @@ function mwtags_scripts(){
 	   
 		wp_enqueue_script( MWTAGS_MAIN_ACTION , MWTAGS_URL_PATH . 'js/tags.js' , array('jquery'), MWTAGS_VERSION, false);
 		$mowstervars = array(
-			'mwtags_countTags' => $mwtags_st->settings['mwtags_count'],
+			'mwtags_countTags' => $count,
 			'mwtags_html_add_to' => '.tagsdiv .ajaxtag',
 			'mwtags_newtags' => '#new-tag-post_tag',
 			'mwtags_fetchTags' => __('Fetch tags', MWTAGS_MAIN_ACTION),
@@ -124,14 +125,27 @@ register_uninstall_hook(__FILE__,'mwtags_plugin_uninstall');
 function mwtags_options($action){
 
 	$mwtags_default_options = array (
-		'mwtags_settings' => serialize(array('mwtags_count' => 20, 'domain' => null, 'domain_check' => null)),
+		'mwtags_settings' => serialize(array('domain' => null, 'domain_check' => null)),
 		'mwtags_api' => serialize(array('last_version' => MWTAGS_VERSION))
 	);
 	
 	foreach ($mwtags_default_options as $key => $value) :
 		switch ($action):
 			case 'activate': 
-				if (!get_option($key)) add_option($key, $value);
+				if (!get_option($key)) :
+					add_option($key, $value);
+				else:
+					/* remove old options */
+					if ($key == 'mwtags_settings'):
+						$new_value = @unserialize(get_option('mwtags_settings'));
+					
+						/* mwtags_count : v1.63 */
+						if (isset($new_value['mwtags_count'])):
+							unset($new_value['mwtags_count']); 
+							update_option($key, $new_value);
+						endif;
+					endif;
+				endif;
 				break;
 			case 'deactivate': 
 				if ($key == 'mwtags_api') update_option($key, $value);

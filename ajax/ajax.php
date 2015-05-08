@@ -8,11 +8,6 @@ if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
 
 function join_post_mwtags(){
 
-
-	/* settings */
-	global $mwtags_st;
-	if (!is_object($mwtags_st)) $mwtags_st = mwtags_rt_settings();	
-
 	
 	/* ajax $_REQUEST */
 	$text = trim(stripslashes(wp_filter_nohtml_kses($_REQUEST['text'])));
@@ -20,10 +15,11 @@ function join_post_mwtags(){
 	$tags = stripslashes(wp_filter_nohtml_kses($_REQUEST['tags']));
 	
 	
-	/* limit option */
-	if ($mwtags_st->settings['mwtags_count'] != $count):
-		$mwtags_st->settings['mwtags_count'] = $count;
-		update_option('mwtags_settings', serialize($mwtags_st->settings));
+	/* limit user option */
+	$user_id = get_current_user_id();
+	$mwtags_count = get_user_meta($user_id, 'mwtags_count', true);
+	if ( !empty($mwtags_count) || $mwtags_count != $count ):
+		update_user_meta( $user_id, 'mwtags_count', $count );
 	endif;
 		
 		
@@ -101,6 +97,8 @@ function join_post_mwtags(){
 	else:
 		mwtags_results( $output, 'warning', $warning );	
 	endif;
+	
+	
 	die();
 }
 ?>
