@@ -3,7 +3,7 @@ Contributors: mowster
 Tags: tag, tags, tagging, post, suggest, related, automatic, seo
 Requires at least: 3.0
 Tested up to: 4.2.2
-Stable tag: 1.70
+Stable tag: 1.71
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,7 +53,10 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Changelog ==  
 
-= New in version 1.70 =
+= 1.71 =
+* Upgrade post install filter added
+
+= 1.70 =
 * Counter dropdown settings per user, not global
 * Fixed tinyMCE text fetch
 * Excerpt reorder
@@ -164,6 +167,6 @@ All supported by <a href="http://developer.yahoo.com/contentanalysis/">YQL Yahoo
 
 == Upgrade Notice ==
 
-= 1.70 =
-Counter dropdown settings per user, not global. Fixed tinyMCE text fetch. Excerpt reorder. jQuery optimized and console log report.
+= 1.71 =
+Upgrade post install filter added.
 

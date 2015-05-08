@@ -8,7 +8,7 @@
 	Author URI: http://jobs.mowster.net
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.70
+	Version: 1.71
 */
 
 if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
@@ -17,7 +17,7 @@ if (realpath(__FILE__) === realpath($_SERVER["SCRIPT_FILENAME"])) {
 	die();
 }
 
-define('MWTAGS_VERSION',            '1.70');
+define('MWTAGS_VERSION',            '1.71');
 define('MWTAGS_PLUGIN_NAME',        'tags.mowster');
 define('MWTAGS_MAIN_ACTION',        'mwtags');
 define('MWTAGS_URL_PATH',           WP_PLUGIN_URL.'/'.str_replace(basename(__FILE__),"",plugin_basename(__FILE__)));
@@ -28,7 +28,6 @@ define('MWTAGS_BASENAME',           plugin_basename(__FILE__));
 define('MWTAGS_CHARSET',            get_bloginfo('charset'));
 define('MWTAGS_SITE_URL',           get_bloginfo('url'));
 define('MWTAGS_DEFAULT_COUNT',     	20);
-
 
 
 /* admin_print_scripts */
@@ -187,10 +186,10 @@ add_action('admin_init', 'mwtags_admin_init');
 function mwtags_admin_notices(){
 
 	if (current_user_can('update_plugins')):
-
+	
 		global $mwtags_st;
 		if (!is_object($mwtags_st)) $mwtags_st = mwtags_rt_settings();
-
+		
 		if (isset($mwtags_st->api['last_version']) && $mwtags_st->api['last_version'] > MWTAGS_VERSION && mwtags_curURL() != admin_url('plugins.php') && mwtags_curURL() != admin_url('update-core.php') && esc_url(mwtags_curURL()) != esc_url(self_admin_url('update-core.php?action=do-plugin-upgrade'))) :			
 			$update_url = wp_nonce_url( self_admin_url('update.php?action=upgrade-plugin&plugin=') . MWTAGS_PLUGIN_SLUG.'/'.MWTAGS_PLUGIN_FILE, 'upgrade-plugin_' . MWTAGS_PLUGIN_SLUG.'/'.MWTAGS_PLUGIN_FILE);
 			if (esc_url(mwtags_curURL()) != esc_url($update_url)):
@@ -204,5 +203,4 @@ function mwtags_admin_notices(){
 
 }
 add_action('admin_notices', 'mwtags_admin_notices');
-
 ?>

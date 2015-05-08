@@ -76,10 +76,11 @@ function mwtags_curURL() {
 
 
 /* upgrader_post_install */
-function mwtags_upgrader_post_install(){
+function mwtags_upgrader_post_install($true, $hook_extra, $result){
+	mwtags_options('activate');
 	mwtags_options('deactivate');
-
+	
+	return $result;
 }
 add_filter('upgrader_post_install', 'mwtags_upgrader_post_install', 10, 3);
-
 ?>
